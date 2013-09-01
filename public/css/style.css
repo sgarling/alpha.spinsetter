@@ -1,0 +1,1097 @@
+body {
+	width: 100%;
+	font-size: 10px;
+	color: rgb(38, 48, 56);
+	background: #BBBBBB;/*url(../img/shattered.png);*/
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+.clear {
+    clear: both;
+}
+
+.content-container {
+    width: 100%;
+    height: 100%;
+	margin-top:65px;
+	
+	position:relative;
+}
+.login-create{
+	width:auto;
+    height: auto;
+	
+	position:relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.view-container {
+	width:1310px;
+    height: 100%;
+	position:relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.view-container  .col{
+    width: 262px;
+	float:left;
+	height:auto;
+}
+@media (-webkit-min-device-pixel-ratio: 2),  (min-resolution: 192dpi) { 
+	body {
+		background: url(../img/shattered_@2X.png);
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+li {
+	list-style-type: none;
+}
+
+.container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+    height: 100%;
+}
+
+.clear {
+	clear: both;
+}
+.loading{
+			background: rgba(0,0,0, 0.7);
+			width:100%;
+			height:100%;
+			padding-top:200px;
+			text-align:center;
+			position:fixed;
+			top:0;
+			left:0;
+			z-index:2;
+			display:none;
+
+}
+
+/* Nav Bar Styles */
+.nav-container {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 3;
+	display:none;
+}
+
+.nav-bar {
+	
+	margin: 0 auto;
+	padding-bottom: 3%;
+	padding-right:1%;
+	padding-left:1%;
+	width: 98%;
+	background: rgb(255, 255, 255);
+   	font-weight: 300;
+   	box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;
+	-webkit-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;		
+	-moz-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px; 
+	font-size: 2em;
+}
+
+.nav-bar .logo {
+	display: inline-block;
+	background: url("../img/svg/spin-logo.svg") no-repeat;
+	background-size: 80%;
+	background-position: center;
+	border-right: 1px solid rgb(218, 218, 218);
+	float: left;
+	padding-bottom:  3%;
+	width: 15%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.nav-bar .following-btn {
+	display: inline-block;
+	position: relative;
+	border-left: 1px solid rgb(218, 218, 218);
+	border-right: 1px solid rgb(218, 218, 218);
+	float: left;
+	padding-bottom: 3%;
+	width: 10%;
+	box-sizing: border-box;
+   	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+	
+}
+
+.nav-bar .following-btn .following-btn-txt {
+	position: absolute;
+    top:50%;
+	left:50%;
+}
+.nav-bar .following-btn:hover .dropdown-ctrls {
+    display: block;
+}
+.nav-bar .following-btn:hover {
+	background:#DDD;
+}
+.nav-bar .following-btn .dropdown-ctrls {
+    left: 0;
+    
+}
+.nav-bar .blogs-btn {
+	display: inline-block;
+	position: relative;
+	border-left: 1px solid rgb(218, 218, 218);
+	border-right: 2px solid rgb(218, 218, 218);
+	float: left;
+	width: 7.5%;
+ 	padding-bottom: 3%;
+	box-sizing: border-box;
+   	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;	
+}
+
+.nav-bar .blogs-btn .blogs-btn-txt {
+	position: absolute;
+    top:50%;
+	left:50%;
+}
+
+.nav-bar .blogs-btn:hover .dropdown-ctrls {
+    display: block;
+}
+.nav-bar .blogs-btn:hover {
+	background:#DDD;
+}
+.nav-bar .blogs-btn .dropdown-ctrls {
+	
+    left: 0;
+    
+}
+
+
+.nav-bar .genres-btn {
+	display: inline-block;
+	position: relative;
+	border-right: 2px solid rgb(218, 218, 218);
+	float: left;
+	padding-bottom: 3%;
+	width: 7.4166666666%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.nav-bar .genres-btn .genres-btn-txt {
+	position: absolute;
+    top:50%;
+	left:50%;
+}
+
+.nav-bar .genres-btn:hover .dropdown-ctrls {
+    display: block;
+}
+.nav-bar .genres-btn:hover {
+	background:#DDD;
+}
+.nav-bar .genres-btn .dropdown-ctrls {
+	
+    left: 0;
+    
+}
+
+.nav-bar .popular-btn {
+	display: inline-block;
+	position: relative;
+	border-right: 2px solid rgb(218, 218, 218);
+	float: left;
+	padding-bottom: 3%;
+	width: 8.166666666666%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.nav-bar .popular-btn:hover {
+	background:#DDD;
+}
+.nav-bar .popular-btn .popular-btn-txt {
+	position: absolute;
+    top:50%;
+	left:50%;
+}
+
+.nav-bar .following-btn:hover, .nav-bar .blogs-btn:hover, .nav-bar .genres-btn:hover, .nav-bar .popular-btn:hover {
+	color: rgb(188, 58, 39);
+	cursor: pointer;
+}
+
+.nav-bar .search{
+	position: relative;
+	float: right;
+	width:27.38666%;
+	padding-bottom: 3%;
+}
+.nav-bar .search .dropdown-ctrls{
+	left: -0.5%;
+    width: 85%;
+	height:auto;
+}
+.nav-bar .search:hover .dropdown-ctrls{
+	display:block;
+	
+}
+.nav-bar .search-input {
+	display: inline-block;
+	position: relative;
+	float: right;
+	padding-bottom: 11%;
+	width: 85%;
+	
+}
+
+.nav-bar .search-input input[type=text] {
+	position: absolute;
+	float: right;
+	right: 0;
+	width: 98%;
+	height: 100%;
+	background: rgb(218, 218, 218);
+	border: none;
+	margin: none;
+	padding: 0 0 0 2%;
+	transition: width 1.5s;
+	-moz-transition: width 1.5s;
+	-webkit-transition: width 1.5s;
+}
+
+.nav-bar .search-input input[type=text]:focus {
+	outline: none;
+	
+}
+
+.nav-bar .search-btn {
+	background: url("../img/svg/search.svg") no-repeat;
+	background-size: 64%;
+	background-position: center;
+	border-left: 2px solid rgb(218, 218, 218);
+	border-right: 2px solid rgb(218, 218, 218);
+	float: right;
+	padding-bottom: 11%;
+	width: 15%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	cursor:pointer;
+}
+
+.nav-bar .search-btn:hover {
+	background: url("../img/svg/search-orange.svg") no-repeat;
+	background-size: 64%;
+	background-position: center;
+}
+
+.nav-bar .search li{
+	cursor:pointer;
+}
+
+.nav-bar .nav-bar-ctrls {
+	position: relative;
+	float: right;
+	border-right: 2px solid rgb(218, 218, 218);
+	padding-bottom: 3%;
+	width: 13%;
+	box-sizing: border-box;
+	-mox-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.nav-bar .nav-bar-ctrls .rwd-btn {
+	position: absolute;
+	background: url("../img/svg/nav-bar-rwd.svg") no-repeat;
+	background-size: 69.23076923%;
+	background-position: center;
+	float: left;
+	width: 33.33333333333%;
+	height: 100%;
+}
+
+.nav-bar .nav-bar-ctrls .rwd-btn:hover {
+	background: url("../img/svg/nav-bar-rwd-orange.svg") no-repeat;
+	background-size: 69.23076923%;
+	background-position: center;
+	cursor: pointer;
+}
+
+.nav-bar .nav-bar-ctrls .play-btn {
+	position: absolute;
+	left: 33.33333333%;
+	background: url("../img/svg/nav-bar-play.svg") no-repeat;
+	background-size: 46.15384615%;
+	background-position: center;
+	float: left;
+	width: 33.333333333333%;
+	height: 100%;
+}
+
+.nav-bar .nav-bar-ctrls .play-btn:hover {
+	background: url("../img/svg/nav-bar-play-orange.svg") no-repeat;
+	background-size: 46.15384615%;
+	background-position: center;
+	cursor: pointer;
+}
+.nav-bar .nav-bar-ctrls .pause-btn {
+	position: absolute;
+	left: 33.33333333%;
+	background: url("../img/svg/nav-bar-pause.svg") no-repeat;
+	background-size: 46.15384615%;
+	background-position: center;
+	float: left;
+	width: 33.333333333333%;
+	height: 100%;
+}
+
+.nav-bar .nav-bar-ctrls .pause-btn:hover {
+	background: url("../img/svg/nav-bar-pause-orange.svg") no-repeat;
+	background-size: 46.15384615%;
+	background-position: center;
+	cursor: pointer;
+}
+.nav-bar .nav-bar-ctrls .ffwd-btn {
+	position: absolute;
+	left: 66.6666666666%;
+	background: url("../img/svg/nav-bar-fwd.svg") no-repeat;
+	background-size: 69.23076923%;
+	background-position: center;
+	float: left;
+	width: 33.333333333333%;
+	height: 100%;
+}
+
+.nav-bar .nav-bar-ctrls .ffwd-btn:hover {
+	background: url("../img/svg/nav-bar-fwd-orange.svg") no-repeat;
+	background-size: 69.23076923%;
+	background-position: center;
+}
+
+.nav-bar .dropdown-ctrls {
+	width:300%;
+	height:300px;
+	overflow-y: scroll;
+	overflow-x: visible;
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: -204.1%;
+    background: #fff;
+    border: 2px solid rgb(218, 218, 218);
+    border-bottom: none;
+    box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;
+	-webkit-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;		
+	-moz-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px; 
+	z-index:4;
+}
+::-webkit-scrollbar {
+    width: 15px;
+	background:#CCC;
+}
+ ::-webkit-scrollbar-button{
+	display:none;
+ }
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+	width:5px;
+	background:#DCDCDC;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    height:10px;
+	background:#B93D23;
+}
+::-webkit-scrollbar-thumb:vertical {
+    border-radius: 10px;
+    height:10px;
+}
+.nav-bar .dropdown-ctrls ul {
+	float:left;
+	font-size:0.9em;
+	font-weight:500;
+	margin:0;
+	margin-left:15px;
+	padding:0;
+}
+.nav-bar .dropdown-ctrls ul li{
+	color:#5C5C5C;
+	padding:2px;
+}
+.nav-bar .dropdown-ctrls ul li:hover{
+	color:rgb(188, 58, 39);
+}
+
+.nav-bar .nav-bar-ctrls .dropdown-ctrls {
+	height: 40px;
+    width:311%;
+	left:-212%;
+	overflow:visible;
+}
+
+.nav-bar .nav-bar-ctrls:hover .dropdown-ctrls {
+    display: block;
+}
+.nav-bar .nav-bar-ctrls:hover{
+	background:#DDD;
+}
+.nav-bar .dropdown-ctrls .song-title {
+    float: left;
+    width: 33.3333333333333333333333%;
+    height: inherit;
+    line-height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: 2px solid rgb(218, 218, 218);
+}
+
+.nav-bar .dropdown-ctrls .progress-section {
+    float: left;
+    width: 59.366666666666666%;
+    height: inherit;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-right: 2px solid rgb(218, 218, 218);
+	cursor:pointer;
+}
+
+.progress-section .song-progress-wrapper {
+    float: left;
+    position: relative;
+    margin-left: 5%;
+    width: 90%;
+    height: inherit;
+}
+
+.song-progress-wrapper .progress-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: rgb(218, 218, 218);
+    margin-top: 18px;
+}
+
+.song-progress-wrapper .song-progress {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    margin-top: 5px;
+    background: rgb(188, 58, 39);
+}
+
+.nav-bar .dropdown-ctrls .like-btn {
+    float: left;
+    width: 7.3%;
+    height: inherit;
+    background: url(../img/svg/like.svg) no-repeat center;
+	background-size: 60%;
+}
+
+.nav-bar .dropdown-ctrls .like-btn:hover {
+    background: url(../img/svg/like-orange.svg) no-repeat center;
+	background-size: 60%;
+}
+
+.nav-bar .calendar-btn {
+	position: relative;
+	background: url("../img/svg/calendar.svg") no-repeat;
+	background-size: auto 68%;
+	background-position: center;
+	float: right;
+	border-right: 2px solid rgb(218, 218, 218);
+	padding-bottom: 3%;
+	width: 5%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	cursor:pointer;
+}
+
+.nav-bar .calendar-btn:hover {
+	background: url("../img/svg/calendar-orange.svg") no-repeat;
+	background-size: auto 68%;
+	background-position: center;
+}
+
+.nav-bar .profile-btn {
+	position:relative;
+	background: url("../img/svg/profile-default.svg") no-repeat;
+	background-size: 44.15584415%;
+	background-position: center;
+	float: right;
+	padding-bottom: 3%;
+	width: 6.3776%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+}
+.nav-bar .profile-btn-link {
+	position:absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	cursor:pointer;
+}
+.nav-bar .profile-btn:hover {
+	background: #DDD url("../img/svg/profile-default-orange.svg") no-repeat;
+	background-size: 44.15574415%;
+	background-position: center;
+}
+
+.nav-bar .profile-btn:hover .dropdown-ctrls {
+    display: block;
+}
+
+.nav-bar .profile-btn .dropdown-ctrls {
+    left: -354%;
+	width:464%;
+	height:auto;
+	padding:1%;
+	overflow:visible;
+}
+.nav-bar .profile-btn .dropdown-ctrls .msg{
+	float: left;
+    font-size: 0.8em;
+    margin: 0 5% 1%;
+    padding: 0;
+    width: 100%;
+}
+.nav-bar .profile-btn .dropdown-ctrls input[type="text"]{
+	width:63%;
+	float:left;
+	height:20px;
+	margin:13px 5% 20px 5%;
+	padding-left:5px;
+	border:1px solid grey;
+}
+.nav-bar .profile-btn .dropdown-ctrls input[type="submit"]{
+	float:left;
+	margin-top:10px;
+	height:30px;
+}
+.notification-circle {
+	position: absolute;
+
+	width: 20%;
+	height: 20%;
+	
+	background: #fff;
+	margin: 3px 0 0 55%;
+	border-radius: 10px;
+	border: 2px solid rgb(188, 58, 39);
+	font-size: 0.5em;
+	color: rgb(188, 58, 39);
+}
+
+.notification-circle p {
+	margin: 6px 0 0 0;
+	height: inherit;
+	line-height: 0;
+}
+
+.nav-bar .calendar-btn:hover .notification-circle {
+	border: 2px solid rgb(38, 48, 56);
+	color: rgb(38, 48, 56);
+}
+
+.nav-bar .profile-btn:hover .notification-circle {
+	border: 2px solid rgb(38, 48, 56);
+	color: rgb(38, 48, 56);
+}
+
+/* Song Card Styles */
+
+.song-card {
+	float: left;
+	width: 250px;
+	height: auto;
+	margin: 0 7px 9px 0;
+	background: #FFF;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	box-shadow: rgb(166, 166, 166) 2px 2px 2px 0px;
+	position:relative;
+}
+
+.song-card .song-title {
+    float: left;
+	font-size: 1.25em;
+	font-weight: bold;
+	padding: 5px 0 0 2.5%;
+	width: 70%;
+	overflow: hidden;
+}
+
+.song-card .song-artist {
+    float: left;
+    width: 70%;
+	font-size: 1.2em;
+	padding: 5px 0 0 2.5%;
+}
+
+
+.song-card .card-prof-pic {
+	cursor:pointer;
+    margin: 5px 2.5% 0 0;
+    float: right;
+    height: 40px;
+    width: 16%;
+    background: url("../img/svg/profile-default.svg") no-repeat center;
+    background-size: auto 100%
+}
+
+.song-card .delete-btn {
+    
+    position:absolute;
+    left:95%;
+	top:-2%;
+	width:21px;
+	height:21px;
+    background: url("../img/delete-icon2.png") no-repeat center;
+    background-size: auto 100%;
+	cursor:pointer;
+	display:none;
+	
+}
+
+.song-card .buttons {
+	width: 100%;
+	height: 30px;
+	margin-top: 20px;
+	margin-left: 2.5%;
+}
+
+.song-card .buttons .listens {	
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 28px;
+	background: url(../img/svg/listens.svg) no-repeat;
+	background-size: auto 60%;
+	background-position: left bottom;
+	line-height: 47px;
+}
+
+
+.song-card .buttons .like-btn {
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 26px;
+	margin-left: 10px;
+	background: url(../img/svg/like.svg) no-repeat left bottom;
+	background-size: auto 60%;
+	line-height: 47px;
+}
+
+.song-card .buttons .like-btn:hover {
+	background: url(../img/svg/like-orange.svg) no-repeat left bottom;
+	background-size: auto 60%;
+	cursor: pointer;
+}
+
+.song-card .buttons .comment-btn {
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 28px;
+	margin-left: 12px;
+	background: url(../img/svg/comment.svg) no-repeat left bottom;
+	background-size: auto 70%;
+	line-height: 47px;
+}
+
+.song-card .buttons .comment-btn:hover {
+	background: url(../img/svg/comment-orange.svg) no-repeat left bottom;
+	background-size: auto 70%;
+	cursor: pointer;
+}
+
+.song-card .buttons .respin-btn {
+	float: right;
+	height: inherit;
+	width: 30px;
+	margin-right: 3%;
+	background: url(../img/svg/respin.svg) no-repeat;
+	background-size: 60% auto;
+	background-position: bottom;
+}
+
+.song-card .buttons .respin-btn:hover {
+	background: url(../img/svg/respin-orange.svg) no-repeat bottom;
+	background-size: 60% auto;
+	cursor: pointer;
+}
+
+
+.song-artwork {
+	width: 95%;
+	height: auto;
+	margin: 5px auto;
+	text-align: center;
+	position:relative;
+}
+
+.song-artwork .card-play-pause {
+	display:none;
+	position: absolute;
+	top:50%;
+	left:50%;
+	width:50px;
+	height: 50px;
+	z-index :1;
+	margin: -25px 0 0 -25px;
+}
+.song-artwork .card-logo {
+	position: absolute;
+	top:88%;
+	left:90%;
+	z-index :1;
+	margin: -8px 0 0 -20px;
+}
+.song-artwork:hover .card-play-pause {
+	display: block;
+	cursor:pointer;
+}
+.song-artwork:hover img{
+	filter: brightness(50%);
+}
+
+.song-card-selected{
+	color:#FFF;
+	background:#263039;
+}
+.song-card-selected  .card-prof-pic{
+	background: url("../img/svg/profile-default-selected.svg") no-repeat center;
+	margin: 5px 2.5% 0 0;
+    float: right;
+    height: 40px;
+    width: 16%;
+    background-size: auto 100%
+}
+.song-card-selected .buttons .comment-btn {
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 28px;
+	margin-left: 12px;
+	background: url(../img/svg/comment-selected.svg) no-repeat left bottom;
+	background-size: auto 70%;
+	line-height: 47px;
+}
+.song-card-selected .buttons .listens {
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 28px;
+	background: url(../img/svg/listens-selected.svg) no-repeat;
+	background-size: auto 60%;
+	background-position: left bottom;
+	line-height: 47px;
+}
+.song-card-selected .buttons .like-btn {
+	float: left;
+	height: inherit;
+	font-size: 1.55em;
+	padding-left: 26px;
+	margin-left: 10px;
+	background: url(../img/svg/like-selected.svg) no-repeat left bottom;
+	background-size: auto 60%;
+	line-height: 47px;
+}
+.song-card-selected .buttons .respin-btn {
+	float: right;
+	height: inherit;
+	width: 30px;
+	margin-right: 3%;
+	background: url(../img/svg/respin-selected.svg) no-repeat;
+	background-size: 60% auto;
+	background-position: bottom;
+}
+
+
+/* Profile Nav Styles */
+
+.profile-nav-container {
+	display:none;
+	width: 100%;
+	background: #fff;
+	border-top: 2px solid rgb(218, 218, 218);
+	box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px; 
+	-moz-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;
+	-webkit-box-shadow: rgb(166, 166, 166) 0px 4px 3px 0px;	
+}
+
+.profile-nav {
+	width: 1200px;
+	height: 75px;
+	background: #fff;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.profile-nav .user-info {
+	float: left;
+	width: 500px;
+	height: inherit;
+	background: url("../img/svg/profile-default.svg") no-repeat;
+	background-position: 5px 50%;
+	text-align: left;
+}
+
+.profile-nav .user-info .name {
+	font-size:2.5em;
+	margin: 8px 0 0 75px;
+	font-weight: bold;
+}
+
+.profile-nav .user-info .location {
+	font-size: 1.4em;
+	margin: -14px 0 0 76px;
+}
+.profile-nav .user-info .location-link {
+	font-size: 1.4em;
+	margin: -18px 0 0 76px;
+	text-decoration:none;
+	color: #263038;
+}
+
+.profile-nav .stream-control {
+	position:relativel;
+	float: right;
+	margin-top:-40px;
+	height: inherit;
+}
+
+.profile-nav .stream-control .posted {
+	float: left;
+	height: inherit;
+	width: 76px;
+}
+
+.profile-nav .stream-control .likes {
+	float: left;
+	height: inherit;
+	width: 70px;
+}
+
+.profile-nav .stream-control .playlists {
+	float: left;
+	height: inherit;
+	width: 85px;
+}
+
+.profile-nav .stream-control .followers {
+	float: right;
+	height: inherit;
+	width: 90px;
+}
+
+.profile-nav .stream-control .following {
+	float: right;
+	height: inherit;
+	width: 100px;
+}
+
+.profile-nav p.type {
+	font-size: 2em;
+	margin: 10px 0 0 0;
+}
+
+.profile-nav p.amount {
+	margin: 0 0 0 0;
+	font-size: 2.5em;
+	font-weight: bold;
+}
+
+.profile-nav .posted:hover, .profile-nav .likes:hover, .profile-nav .playlists:hover, .profile-nav .followers:hover, .profile-nav .following:hover {
+	color: rgb(188, 58, 39);
+	cursor: pointer;
+
+}
+
+.profile-nav .follow {
+	position:relative;
+	float: right;
+	width: 120px;
+	height: inherit;
+}
+
+.profile-nav .follow .follow-btn {
+	float: left;
+	margin: 25px 0 0 20px;
+	width: 80px;
+	height: 22px;
+	background: rgb(188, 58, 39);
+	color: #fff;
+	padding-top: 3px;
+	font-size: 1.5em;
+	cursor:pointer;
+}
+.profile-nav .follow .unfollow-btn {
+	display:none;
+	float: left;
+	margin: 25px 0 0 20px;
+	width: 80px;
+	height: 22px;
+	background: rgb(114,110,109);
+	color: #fff;
+	padding-top: 3px;
+	font-size: 1.5em;
+	cursor:pointer;
+}
+.profile-nav .follow .edit-btn {
+	float: left;
+	margin: 25px 0 0 20px;
+	width: 80px;
+	height: 22px;
+	background: rgb(188, 58, 39);
+	color: #fff;
+	padding-top: 3px;
+	font-size: 1.5em;
+	cursor:pointer;
+	display:none;
+}
+.profile-nav .follow .done-btn {
+	float: left;
+	margin: 25px 0 0 20px;
+	width: 80px;
+	height: 22px;
+	background: rgb(188, 58, 39);
+	color: #fff;
+	padding-top: 3px;
+	font-size: 1.5em;
+	cursor:pointer;
+	display:none;
+}
+/* Isotope Animations */
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 2s;
+     -moz-transition-duration: 2s;
+      -ms-transition-duration: 2s;
+       -o-transition-duration: 2s;
+          transition-duration: 2s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/* Playlisting Modal Styles */
+.dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+}
+
+.dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(218, 218, 218, .9);
+    z-index: 4;
+}
+
+.playlisting-dialog-container {
+    position: relative;
+    top: 150px;
+    width: 650px;
+    z-index: 51;
+    margin: 0 auto;  
+}
+
+
+.playlisting-dialog {
+    width: 650px;
+    height: 300px;
+    background: #fff;
+}
+
+.playlisting-dialog .playlisting-header {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px 7px;
+    border-bottom: 2px solid rgb(218, 218, 218);
+}
+
+.playlisting-artwork {
+    float: right;
+    width: 200px;
+    height: auto;
+    padding: 7px 7px 0 0; 
+}
+
+.playlist-chooser {
+    font-size: 1.3em;
+    width: 436px;
+    margin: 0 0 0 7px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.add-to-playlist-btn {
+    background: rgb(188, 58, 39);
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.login-page-container {
+    width: 100%;
+    height: 100%;
+    background: url(../img/loginbg.jpg) no-repeat center center fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+}
+
+.login-form-content {
+    width: 50%;
+    position: relative;
+    left: 50%;
+}
+
+.login-form-content input[type=text] {
+    background: rgba(255, 255, 255, 0.9);
+}
