@@ -1,19 +1,12 @@
 import re
 import json
+import MySQLdb
 from scrapy.spider import BaseSpider
 from scrapy.http import Request
 
 
 class RSSSpider(BaseSpider):
     name = "rss_spider"
-    #allowed_domains = ["anewbandaday.com"]
-    start_urls = [
-        "http://www.anewbandaday.com/feed",
-        "http://feeds.feedburner.com/allthingsgomusic",
-        "http://blahblahblahscience.com/feed",
-        "http://buzzbands.la/feed/",
-        "http://www.secretdecoder.net/feeds/posts/default?alt=rss",
-        ]
 
     urls_replace_dict_soundcloud = {'https://w.soundcloud.com/player/?url=': '',
                                     'http://w.soundcloud.com/player/?url=': '',
@@ -47,7 +40,18 @@ class RSSSpider(BaseSpider):
                                  }
 
 
+    def __init__(self):
+        con = MySQLdb.connect('localhost', 'root', '11dejulio', 'spinsetter')
+        cur = con.cursor()
+        cur.execute('SELECT FeedBlog FROM blogs')
+        rows = cur.fetchall()
+        self.start_urls = [i[0] for i in rows]
+
+
     def parse(self, response):
+        print 'START URLS !!!!!'
+        print self.start_urls
+
         content = response.body
         requests = []
 
