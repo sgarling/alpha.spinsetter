@@ -1,6 +1,6 @@
 import MySQLdb
 import urllib
-
+import shutil
 
 class ScraperPipeline(object):
     con = None
@@ -15,8 +15,10 @@ class ScraperPipeline(object):
         cur.execute("SELECT * FROM songs where UrlSong='" + item['UrlSong'] + "'")
         rows = cur.fetchall()
         if len(rows) == 0:
-            if item['UrlImage'] != '':
+            if item['UrlImage'] != None:
                 urllib.urlretrieve(item['UrlImage'], self.img_path+item['Artwork'])
-            print 'UrlImage: ' + item['UrlImage']
-            
+                print 'Download UrlImage: '+item['UrlImage']
+            else:
+                shutil.copy(self.img_default, self.img_path+item['Artwork'])
+                print 'Copy Artwork: '+self.img_path+item['Artwork']
         return item

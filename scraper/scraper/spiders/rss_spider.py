@@ -52,11 +52,11 @@ class RSSSpider(BaseSpider):
         for i in rows:
             self.id_blogs[i[1]] = i[0] 
         self.start_urls = [i[1] for i in rows]
+        print 'START URLS !!!!!'
+        print self.start_urls
 
 
     def parse(self, response):
-        #print 'START URLS !!!!!'
-        #print self.start_urls
         content = response.body
         requests = []
 
@@ -69,7 +69,11 @@ class RSSSpider(BaseSpider):
         urls_soundcloud = [i.split('&')[0] for i in urls_soundcloud]
         urls_soundcloud = [i.split('_')[0] for i in urls_soundcloud]
         for url in urls_soundcloud:
-            requests.append(Request(url='http://api.soundcloud.com/resolve.json?url='+url+'&client_id=7d1117f42417d715b28ef9d59af7d57c&format=json&_status_code_map[302]=200', callback=self.parse_resolve_soundcloud, meta={'UrlSong': url, 'IdBlog': self.id_blogs[response.request.url]}))
+            if 'redirect_urls' in response.request.meta:
+                id_blog = self.id_blogs[response.request.meta['redirect_urls'][0]]
+            else:
+                id_blog = self.id_blogs[response.request.url]
+            requests.append(Request(url='http://api.soundcloud.com/resolve.json?url='+url+'&client_id=7d1117f42417d715b28ef9d59af7d57c&format=json&_status_code_map[302]=200', callback=self.parse_resolve_soundcloud, meta={'UrlSong': url, 'IdBlog': id_blog}))
 
         # youtube - find urls and ids, add metadata requests
         urls_youtube = re.findall(r'((https?\:)?//www\.youtube\.com/[a-zA-Z0-9\+&@#\-\_/=\?%\.]+)', content)
@@ -84,7 +88,11 @@ class RSSSpider(BaseSpider):
                 id = urls_youtube[i].split('outube.com/v/')
                 id = id[1] if len(id) > 1 else ''
                 id = id[0:12]
-                requests.append(Request(url='http://gdata.youtube.com/feeds/api/videos/'+id+'?v=2&alt=jsonc', callback=self.parse_metadata_youtube, meta={'UrlSong': 'http://www.youtube.com/v/'+id, 'IdBlog': self.id_blogs[response.request.url]}))
+                if 'redirect_urls' in response.request.meta:
+                    id_blog = self.id_blogs[response.request.meta['redirect_urls'][0]]
+                else:
+                    id_blog = self.id_blogs[response.request.url]
+                requests.append(Request(url='http://gdata.youtube.com/feeds/api/videos/'+id+'?v=2&alt=jsonc', callback=self.parse_metadata_youtube, meta={'UrlSong': 'http://www.youtube.com/v/'+id, 'IdBlog': id_blog}))
 
         # return requests
         return requests
@@ -104,7 +112,7 @@ class RSSSpider(BaseSpider):
         content_dict = json.loads(content)
         item = SongItem()
         item['IdBlog'] = response.meta['IdBlog']
-        item['UrlImage'] = '' if not 'artwork_url' in content_dict else content_dict['artwork_url']
+        item['UrlImage'] = None if not 'artwork_url' in content_dict else content_dict['artwork_url']
         item['UrlSong'] = response.meta['UrlSong']
         item['TypeSong'] = content_dict['kind']
         item['TypeSource'] = 'soundcloud'
@@ -122,21 +130,22 @@ class RSSSpider(BaseSpider):
     def parse_metadata_youtube(self, response):
         content = response.body
         content_dict = json.loads(content)
-        item = SongItem()
-        item['IdBlog'] = response.meta['IdBlog']
-        item['UrlImage'] = content_dict['data']['thumbnail']['hqDefault']
-        item['UrlSong'] = response.meta['UrlSong']
-        item['TypeSong'] = 'track'
-        item['TypeSource'] = 'youtube'
-        item['Title'] = content_dict['data']['title']
-        item['Author'] = content_dict['data']['uploader']
-        item['Description'] = content_dict['data']['description']
-        item['Duration'] = content_dict['data']['duration']
-        item['Genres'] = content_dict['data']['category']
-        item['Artwork'] = str(content_dict['data']['id']) + '.jpg'
-        item['IdSource'] = content_dict['data']['id']
-        item['PubDate'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        return item
-
+        if 'title' in content_dict['data']:
+            item = SongItem()
+            item['IdBlog'] = response.meta['IdBlog']
+            item['UrlImage'] = None if not 'thumbnail' in content_dict['data'] else content_dict['data']['thumbnail']['hqDefault']
+            item['UrlSong'] = response.meta['UrlSong']
+            item['TypeSong'] = 'track'
+            item['TypeSource'] = 'youtube'
+            item['Title'] = content_dict['data']['title']
+            item['Author'] = content_dict['data']['uploader']
+            item['Description'] = content_dict['data']['description']
+            item['Duration'] = content_dict['data']['duration']
+            item['Genres'] = content_dict['data']['category']
+            item['Artwork'] = str(content_dict['data']['id']) + '.jpg'
+            item['IdSource'] = content_dict['data']['id']
+            item['PubDate'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            return item
+    
 
 
