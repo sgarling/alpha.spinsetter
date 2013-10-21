@@ -11,20 +11,19 @@ from scrapy.item import Item, Field
 #    pass
 
 class SongItem(Item):
-    UrlSong = Field()
-    
+    IdBlog = Field()
+    UrlImage = Field()
 
-#	var $IdSong = '';
-#	var $UrlSong   = '';
-#	var $TypeSong ='';
-#	var $TypeSource ='';
-#
-#	var $Title='';
-#	var $Author='';
-#	var $Description='';
-#	var $Duration='';
-#	var $Genres='';
-#	var $Artwork='';
-#	var $IdSource='';
-#	var $PubDate='';
+    #IdSong = Field()   autoincremented
+    UrlSong = Field() 
+    TypeSong  = Field() 
+    TypeSource  = Field() 
+    Title = Field() 
+    Author = Field() 
+    Description = Field() 
+    Duration = Field() 
+    Genres = Field() 
+    Artwork = Field() 
+    IdSource = Field() 
+    PubDate = Field() 
 

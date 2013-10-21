@@ -13,3 +13,8 @@ NEWSPIDER_MODULE = 'scraper.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'spinsetter (+http://www.yourdomain.com)'
+
+
+LOG_LEVEL = 'INFO'
+DEFAULT_ITEM_CLASS = 'scraper.items.SongItem'
+ITEM_PIPELINES = ['scraper.pipelines.ScraperPipeline']
